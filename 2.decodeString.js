@@ -8,12 +8,11 @@
 // 1. Whenever we encounter any number, push it into the integer stack and in case of any alphabet (a to z) or open bracket (‘[‘), push it onto the character stack.
 // 2. Whenever any close bracket (‘]’) is encounter pop the character from the character stack until open bracket (‘[‘) is not found in the character stack. Also, pop the top element from the integer stack, say n. Now make a string repeating the popped character n number of time. Now, push all character of the string in the stack.
 
-// Complexity: time: O(n) | space: O(n)
+// Complexity: time: O(n^2) | space: O(n)
 const decodeString = s => {
   let repeatAmts = [];
   let decodedStr = "";
   let decodedChunk = [];
-
   for (let i = 0; i < s.length; i++) {
     let char = s[i];
     if (parseInt(char)) {
@@ -31,7 +30,6 @@ const decodeString = s => {
       decodedStr += char;
     }
   }
-
   return decodedStr;
 };
 
