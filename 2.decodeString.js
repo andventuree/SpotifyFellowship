@@ -8,30 +8,6 @@
 // 1. Whenever we encounter any number, push it into the integer stack and in case of any alphabet (a to z) or open bracket (‘[‘), push it onto the character stack.
 // 2. Whenever any close bracket (‘]’) is encounter pop the character from the character stack until open bracket (‘[‘) is not found in the character stack. Also, pop the top element from the integer stack, say n. Now make a string repeating the popped character n number of time. Now, push all character of the string in the stack.
 
-// function decodeString(s) {
-//   let repeatAmts = [];
-//   let charArr = [];
-//   let decoded = null;
-//   for (let i = 0; i < s.length; i++) {
-//     let char = s[i]
-//     if (parseInt(char)) {
-//       repeatAmts.push(parseInt(char));
-//     } else if (char === "]") {
-//       break;
-//     } else {
-//       charArr.push(char);
-//     }
-//   }
-
-//   let encodedChunks = charArr.join("").split("[");
-//   while (repeatAmts.length > 0) {
-//     decoded = encodedChunks.pop().repeat(repeatAmts.pop());
-//     encodedChunks[encodedChunks.length - 1] =
-//       encodedChunks[encodedChunks.length - 1] + decoded;
-//   }
-//
-// }
-
 // Complexity: time: O(n) | space: O(n)
 const decodeString = s => {
   let repeatAmts = [];
